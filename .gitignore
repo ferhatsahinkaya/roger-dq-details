@@ -1,0 +1,5 @@
+build/
+/operator-app/build/
+.idea/
+*.iml
+.gradle/

@@ -1,0 +1,4 @@
+graphql:
+  packages: "service.operator.domain"
+server:
+  port: 8088
