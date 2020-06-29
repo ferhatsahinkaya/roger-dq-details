@@ -5,11 +5,12 @@ import com.expediagroup.graphql.TopLevelObject
 import com.expediagroup.graphql.spring.operations.Query
 import com.expediagroup.graphql.toSchema
 import org.springframework.stereotype.Component
+import sun.security.jca.ServiceId
 
 @Component
 class DqDetailsQuery : Query {
-    fun dqDetails(recordId: String): DqDetails {
-        return DqDetails(recordId, "Test", "", "", "", "", "", "", "", "", "", "", "")
+    fun dqDetails(serviceId: Long): DqDetails {
+        return DqDetails(serviceId, "0001", "Bob", "", "", "", "", "", "", "", "", "", "", "")
     }
 }
 
