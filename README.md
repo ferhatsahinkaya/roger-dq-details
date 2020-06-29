@@ -1,9 +1,9 @@
-# GraphQL API for exposing operator data
+# GraphQL API for exposing directory enquiries details data
 
 Requirements
 
 Stage 1
-- Have at least 3 microservices (operator & services)
+- Have at least 3 microservices (operator, dqDetails & services)
 - Have a service that will join the schemas from the microservices
 - Just query type
 

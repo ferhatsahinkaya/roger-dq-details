@@ -5,15 +5,16 @@ plugins {
 }
 
 application {
-    mainClassName = "service.operator.Launcher"
+    mainClassName = "service.dqdetails.Launcher"
 }
 
 tasks {
     withType(com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar::class.java) {
-        baseName = "operator-fat"
+        baseName = "dqdetails-fat"
     }
 }
 
 dependencies {
-    implementation("com.expediagroup:graphql-kotlin-spring-server:2.0.0-RC9.1")
+    implementation("com.expediagroup","graphql-kotlin-spring-server","2.0.0-RC9.1")
+    implementation("com.expediagroup","graphql-kotlin-federation","2.0.0-RC9.1")
 }
