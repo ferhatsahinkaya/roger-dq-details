@@ -1,4 +1,4 @@
-package service.dqdetails
+package com.roger.dqdetails
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
@@ -12,5 +12,4 @@ open class Launcher {
             runApplication<Launcher>(*args)
         }
     }
-
 }

@@ -1,11 +1,10 @@
-package service.dqdetails.domain
+package com.roger.dqdetails.domain
 
 import com.expediagroup.graphql.SchemaGeneratorConfig
 import com.expediagroup.graphql.TopLevelObject
 import com.expediagroup.graphql.spring.operations.Query
 import com.expediagroup.graphql.toSchema
 import org.springframework.stereotype.Component
-import sun.security.jca.ServiceId
 
 @Component
 class DqDetailsQuery : Query {

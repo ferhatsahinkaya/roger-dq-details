@@ -1,5 +1,5 @@
 build/
-/operator-app/build/
+/dq-details-app/build/
 .idea/
 *.iml
 .gradle/

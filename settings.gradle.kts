@@ -1,1 +1,1 @@
-include("operator-app")
+include("dq-details-app")

@@ -1,4 +1,4 @@
-package service.dqdetails.domain
+package com.roger.dqdetails.domain
 
 import com.expediagroup.graphql.federation.directives.FieldSet
 import com.expediagroup.graphql.federation.directives.KeyDirective
