@@ -3,7 +3,7 @@ package com.roger.dqdetails.domain
 data class DqDetails(
         val serviceId: Long,
         val type: String,
-        val firstNAmeOrInitial: String,
+        val firstNameOrInitial: String,
         val surname: String,
         val specialEquipment: String,
         val specialTypeface: String,

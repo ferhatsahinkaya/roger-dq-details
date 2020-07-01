@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component
 @Component
 class DqDetailsQuery : Query {
     fun dqDetails(serviceId: Long): DqDetails {
-        return DqDetails(serviceId, "0001", "Bob", "", "", "", "", "", "", "", "", "", "", "")
+        return DqDetails(serviceId, "0001", "Bob", "surname", "specialEquipment", "specialTypeface", "premises", "thoroughfare", "locality", "postcode", "recordId", "marketingPreferences", "nddReferenceNumber", "customerType")
     }
 }
 
