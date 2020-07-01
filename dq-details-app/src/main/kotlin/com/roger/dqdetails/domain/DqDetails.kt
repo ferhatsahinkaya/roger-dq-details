@@ -1,10 +1,6 @@
 package com.roger.dqdetails.domain
 
-import com.expediagroup.graphql.federation.directives.FieldSet
-import com.expediagroup.graphql.federation.directives.KeyDirective
-
-@KeyDirective(fields = FieldSet("recordId"))
-data class DqDetails (
+data class DqDetails(
         val serviceId: Long,
         val type: String,
         val firstNAmeOrInitial: String,
@@ -18,7 +14,6 @@ data class DqDetails (
         val recordId: String,
         val marketingPreference: String,
         val nddReferenceNumber: String,
-        val customerType: String)
-{
+        val customerType: String) {
 
 }

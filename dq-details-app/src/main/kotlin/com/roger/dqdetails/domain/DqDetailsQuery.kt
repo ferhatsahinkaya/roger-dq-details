@@ -14,6 +14,6 @@ class DqDetailsQuery : Query {
 }
 
 // Generate the schema
-val config = SchemaGeneratorConfig(supportedPackages = listOf("service.dqdetails.domain"))
+val config = SchemaGeneratorConfig(supportedPackages = listOf("com.roger.dqdetails.domain"))
 val queries = listOf(TopLevelObject(DqDetailsQuery()))
 val schema = toSchema(config, queries)
