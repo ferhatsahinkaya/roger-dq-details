@@ -1,6 +1,6 @@
 plugins {
     application
-    id("com.github.johnrengelman.shadow") version "4.0.3"
+    id("org.springframework.boot") version "2.3.1.RELEASE"
 }
 
 application {
@@ -8,12 +8,11 @@ application {
 }
 
 tasks {
-    withType(com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar::class.java) {
-        baseName = "dq-details-fat"
+    bootJar {
+        mainClassName = "com.roger.dqdetails.Launcher"
     }
 }
 
 dependencies {
     implementation("com.expediagroup","graphql-kotlin-spring-server","2.0.0-RC9.1")
-    implementation("com.expediagroup","graphql-kotlin-federation","2.0.0-RC9.1")
 }
