@@ -1,16 +1,15 @@
 plugins {
     application
-    id("org.springframework.boot") version "2.2.5.RELEASE"
     id("com.github.johnrengelman.shadow") version "4.0.3"
 }
 
 application {
-    mainClassName = "service.dqdetails.Launcher"
+    mainClassName = "com.roger.dqdetails.Launcher"
 }
 
 tasks {
     withType(com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar::class.java) {
-        baseName = "dqdetails-fat"
+        baseName = "dq-details-fat"
     }
 }
 
