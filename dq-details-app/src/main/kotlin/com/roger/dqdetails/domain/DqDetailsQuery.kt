@@ -6,6 +6,7 @@ import com.expediagroup.graphql.spring.operations.Mutation
 import com.expediagroup.graphql.spring.operations.Query
 import graphql.schema.DataFetchingEnvironment
 import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
 import org.springframework.stereotype.Component
 
 val dqDetailsMap = mutableMapOf<Long, DqDetails>()
@@ -18,20 +19,7 @@ class DqDetailsQuery : Query {
 @Component
 class DqDetailsMutation : Mutation {
     fun dqDetails(dqDetails: DqDetailsInput): DqDetails {
-        if (dqDetailsMap[dqDetails.serviceId] != null) {
-            dqDetailsMap[dqDetails.serviceId] = DqDetails(
-                    dqDetails.serviceId,
-                    dqDetails.type,
-                    dqDetails.firstNameOrInitial,
-                    dqDetails.surname,
-                    dqDetails.postcode,
-                    dqDetails.recordId,
-                    dqDetails.customerType)
-        }
-
-
         dqDetailsMap[dqDetails.serviceId] = DqDetails(
-                dqDetails.serviceId,
                 dqDetails.type,
                 dqDetails.firstNameOrInitial,
                 dqDetails.surname,
@@ -42,11 +30,15 @@ class DqDetailsMutation : Mutation {
     }
 }
 
-private val dqDetailsResolver = object : FederatedTypeResolver<DqDetails> {
-    override suspend fun resolve(environment: DataFetchingEnvironment, representations: List<Map<String, Any>>): List<DqDetails?> = representations.map {
-        dqDetailsMap[it["serviceId"]]
+private val serviceResolver = object : FederatedTypeResolver<Service> {
+    override suspend fun resolve(environment: DataFetchingEnvironment, representations: List<Map<String, Any>>): List<Service?> = representations.map {
+        val identifier = it["id"].toString().toLong()
+        Service(identifier, dqDetailsMap[identifier]!!)
     }
 }
 
-@Bean
-fun federatedTypeRegistry() = FederatedTypeRegistry(mapOf("DqDetails" to dqDetailsResolver))
+@Configuration
+open class SchemaConfig {
+    @Bean
+    open fun federatedTypeRegistry() = FederatedTypeRegistry(mapOf("Service" to serviceResolver))
+}

@@ -5,9 +5,7 @@ import com.expediagroup.graphql.federation.directives.ExternalDirective
 import com.expediagroup.graphql.federation.directives.FieldSet
 import com.expediagroup.graphql.federation.directives.KeyDirective
 
-@KeyDirective(fields = FieldSet("serviceId"))
 data class DqDetails(
-        val serviceId: Long,
         val type: String,
         val firstNameOrInitial: String?,
         val surname: String,
